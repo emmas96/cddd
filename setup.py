@@ -14,17 +14,13 @@ setup(
     description='continous and data-driven molecular descriptors (CDDD)',
     python_requires='>=3.6.1',
     install_requires=[
-        'tensorflow-gpu',
+        'tensorflow',
         'scikit-learn',
         'pandas<=1.0.3',
         'requests',
         'appdirs'
       ],
-    extras_require = {
-        'cpu': [
-            'tensorflow'
-            ]
-    },
+    extras_require = {},
     entry_points={
         'console_scripts': [
             'cddd = cddd.run_cddd:main_wrapper',
