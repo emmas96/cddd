@@ -1,5 +1,7 @@
 # Continuous and Data-Driven Descriptors (CDDD)
 
+This slight refinement of the CDDD package fixes problems with running simple inference for sequence to embedding using the default pre-trained model. Furthermore, an ONNX-file is created for the inference of the same model, to be made available soon.
+
 Implementation of the Paper "Learning Continuous and Data-Driven Molecular
 Descriptors by Translating Equivalent Chemical Representations" by Robin Winter, Floriane Montanari, Frank Noe and Djork-Arne Clevert.<sup>1</sup>
 
