@@ -97,16 +97,16 @@ class InferenceModel(object):
         parser = argparse.ArgumentParser()
         add_arguments(parser)
         flags = parser.parse_args([])
-        flags.hparams_from_file = True
+        flags.hparams_from_file = False
         flags.save_dir = model_dir
         self.hparams = create_hparams(flags)
-        self.hparams.set_hparam("save_dir", model_dir)
-        self.hparams.set_hparam("batch_size", batch_size)
-        self.hparams.set_hparam("gpu_mem_frac", gpu_mem_frac)
+        #self.hparams.set_hparam("save_dir", model_dir)
+        #self.hparams.set_hparam("batch_size", batch_size)
+        #self.hparams.set_hparam("gpu_mem_frac", gpu_mem_frac)
         self.hparams.add_hparam("beam_width", beam_width)
-        self.hparams.set_hparam("cpu_threads", cpu_threads)
-        self.encode_model, self.decode_model = build_models(self.hparams,
-                                                            modes=["ENCODE", "DECODE"])
+        #self.hparams.set_hparam("cpu_threads", cpu_threads)
+        #self.encode_model, self.decode_model = build_models(self.hparams, modes=["ENCODE", "DECODE"])
+        self.encode_model = build_models(self.hparams, modes=["ENCODE"])[0]
         self.maximum_iterations = maximum_iterations
 
     def seq_to_emb(self, seq):
